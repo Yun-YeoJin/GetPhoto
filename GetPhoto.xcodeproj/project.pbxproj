@@ -14,6 +14,7 @@
 		AE9D2D79290583C400043D8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D78290583C400043D8B /* Assets.xcassets */; };
 		AE9D2D7C290583C400043D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D7A290583C400043D8B /* LaunchScreen.storyboard */; };
 		AE9D2D8429058F9200043D8B /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D8329058F9200043D8B /* CObservable.swift */; };
+		AE9D2D8629058FEF00043D8B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D8529058FEF00043D8B /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		AE9D2D7B290583C400043D8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AE9D2D7D290583C400043D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9D2D8329058F9200043D8B /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
+		AE9D2D8529058FEF00043D8B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		AE9D2D63290583C200043D8B = {
 			isa = PBXGroup;
 			children = (
+				AE9D2D8529058FEF00043D8B /* .gitignore */,
 				AE9D2D6E290583C200043D8B /* GetPhoto */,
 				AE9D2D6D290583C200043D8B /* Products */,
 			);
@@ -128,6 +131,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9D2D8629058FEF00043D8B /* .gitignore in Resources */,
 				AE9D2D7C290583C400043D8B /* LaunchScreen.storyboard in Resources */,
 				AE9D2D79290583C400043D8B /* Assets.xcassets in Resources */,
 				AE9D2D77290583C200043D8B /* Main.storyboard in Resources */,
