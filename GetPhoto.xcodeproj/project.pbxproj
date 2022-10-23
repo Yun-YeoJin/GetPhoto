@@ -15,6 +15,8 @@
 		AE9D2D7C290583C400043D8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D7A290583C400043D8B /* LaunchScreen.storyboard */; };
 		AE9D2D8429058F9200043D8B /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D8329058F9200043D8B /* CObservable.swift */; };
 		AE9D2D8629058FEF00043D8B /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D8529058FEF00043D8B /* .gitignore */; };
+		AE9D2D882905901600043D8B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D872905901600043D8B /* APIKey.swift */; };
+		AE9D2D8A2905903E00043D8B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D892905903E00043D8B /* EndPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		AE9D2D7D290583C400043D8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE9D2D8329058F9200043D8B /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
 		AE9D2D8529058FEF00043D8B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		AE9D2D872905901600043D8B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		AE9D2D892905903E00043D8B /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				AE9D2D7A290583C400043D8B /* LaunchScreen.storyboard */,
 				AE9D2D7D290583C400043D8B /* Info.plist */,
 				AE9D2D8329058F9200043D8B /* CObservable.swift */,
+				AE9D2D872905901600043D8B /* APIKey.swift */,
+				AE9D2D892905903E00043D8B /* EndPoint.swift */,
 			);
 			path = GetPhoto;
 			sourceTree = "<group>";
@@ -145,10 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9D2D8A2905903E00043D8B /* EndPoint.swift in Sources */,
 				AE9D2D8429058F9200043D8B /* CObservable.swift in Sources */,
 				AE9D2D74290583C200043D8B /* ViewController.swift in Sources */,
 				AE9D2D70290583C200043D8B /* AppDelegate.swift in Sources */,
 				AE9D2D72290583C200043D8B /* SceneDelegate.swift in Sources */,
+				AE9D2D882905901600043D8B /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
