@@ -21,6 +21,10 @@
 		AE9D2D8F2905917400043D8B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = AE9D2D8E2905917400043D8B /* Alamofire */; };
 		AE9D2D922905917F00043D8B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = AE9D2D912905917F00043D8B /* Kingfisher */; };
 		AE9D2D94290591AA00043D8B /* RandomPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D93290591AA00043D8B /* RandomPhoto.swift */; };
+		AE9D2D97290599AE00043D8B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = AE9D2D96290599AE00043D8B /* SnapKit */; };
+		AE9D2D9A290599BA00043D8B /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = AE9D2D99290599BA00043D8B /* Then */; };
+		AE9D2D9C290599EB00043D8B /* RandomPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D9B290599EB00043D8B /* RandomPhotoViewModel.swift */; };
+		AE9D2D9F29059A2000043D8B /* RandomPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D9E29059A2000043D8B /* RandomPhotoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,8 @@
 		AE9D2D892905903E00043D8B /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		AE9D2D8B2905915700043D8B /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		AE9D2D93290591AA00043D8B /* RandomPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhoto.swift; sourceTree = "<group>"; };
+		AE9D2D9B290599EB00043D8B /* RandomPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoViewModel.swift; sourceTree = "<group>"; };
+		AE9D2D9E29059A2000043D8B /* RandomPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomPhotoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +51,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE9D2D97290599AE00043D8B /* SnapKit in Frameworks */,
 				AE9D2D922905917F00043D8B /* Kingfisher in Frameworks */,
 				AE9D2D8F2905917400043D8B /* Alamofire in Frameworks */,
+				AE9D2D9A290599BA00043D8B /* Then in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,20 +81,30 @@
 		AE9D2D6E290583C200043D8B /* GetPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				AE9D2D9D290599F500043D8B /* Main */,
+				AE9D2D9B290599EB00043D8B /* RandomPhotoViewModel.swift */,
+				AE9D2D9E29059A2000043D8B /* RandomPhotoVC.swift */,
+				AE9D2D8329058F9200043D8B /* CObservable.swift */,
+				AE9D2D872905901600043D8B /* APIKey.swift */,
+				AE9D2D892905903E00043D8B /* EndPoint.swift */,
+				AE9D2D8B2905915700043D8B /* APIService.swift */,
+				AE9D2D93290591AA00043D8B /* RandomPhoto.swift */,
+				AE9D2D7D290583C400043D8B /* Info.plist */,
+			);
+			path = GetPhoto;
+			sourceTree = "<group>";
+		};
+		AE9D2D9D290599F500043D8B /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				AE9D2D6F290583C200043D8B /* AppDelegate.swift */,
 				AE9D2D71290583C200043D8B /* SceneDelegate.swift */,
 				AE9D2D73290583C200043D8B /* ViewController.swift */,
 				AE9D2D75290583C200043D8B /* Main.storyboard */,
 				AE9D2D78290583C400043D8B /* Assets.xcassets */,
 				AE9D2D7A290583C400043D8B /* LaunchScreen.storyboard */,
-				AE9D2D7D290583C400043D8B /* Info.plist */,
-				AE9D2D8329058F9200043D8B /* CObservable.swift */,
-				AE9D2D872905901600043D8B /* APIKey.swift */,
-				AE9D2D892905903E00043D8B /* EndPoint.swift */,
-				AE9D2D8B2905915700043D8B /* APIService.swift */,
-				AE9D2D93290591AA00043D8B /* RandomPhoto.swift */,
 			);
-			path = GetPhoto;
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +126,8 @@
 			packageProductDependencies = (
 				AE9D2D8E2905917400043D8B /* Alamofire */,
 				AE9D2D912905917F00043D8B /* Kingfisher */,
+				AE9D2D96290599AE00043D8B /* SnapKit */,
+				AE9D2D99290599BA00043D8B /* Then */,
 			);
 			productName = GetPhoto;
 			productReference = AE9D2D6C290583C200043D8B /* GetPhoto.app */;
@@ -140,6 +160,8 @@
 			packageReferences = (
 				AE9D2D8D2905917400043D8B /* XCRemoteSwiftPackageReference "Alamofire" */,
 				AE9D2D902905917F00043D8B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				AE9D2D95290599AE00043D8B /* XCRemoteSwiftPackageReference "SnapKit" */,
+				AE9D2D98290599BA00043D8B /* XCRemoteSwiftPackageReference "Then" */,
 			);
 			productRefGroup = AE9D2D6D290583C200043D8B /* Products */;
 			projectDirPath = "";
@@ -176,6 +198,8 @@
 				AE9D2D70290583C200043D8B /* AppDelegate.swift in Sources */,
 				AE9D2D72290583C200043D8B /* SceneDelegate.swift in Sources */,
 				AE9D2D882905901600043D8B /* APIKey.swift in Sources */,
+				AE9D2D9C290599EB00043D8B /* RandomPhotoViewModel.swift in Sources */,
+				AE9D2D9F29059A2000043D8B /* RandomPhotoVC.swift in Sources */,
 				AE9D2D94290591AA00043D8B /* RandomPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -420,6 +444,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		AE9D2D95290599AE00043D8B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		AE9D2D98290599BA00043D8B /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -432,6 +472,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE9D2D902905917F00043D8B /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		AE9D2D96290599AE00043D8B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE9D2D95290599AE00043D8B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		AE9D2D99290599BA00043D8B /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AE9D2D98290599BA00043D8B /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
