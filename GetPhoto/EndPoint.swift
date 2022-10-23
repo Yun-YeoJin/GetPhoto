@@ -7,9 +7,9 @@
 
 import Foundation
 
-enum unsplashURL {
+enum EndPoint {
     
     static let baseURL = "https://api.unsplash.com"
-    static let randomPhotoURL = "https://api.unsplash.com/search/random?query="
+    static let randomPhotoURL = "https://api.unsplash.com/photos/random?query="
 
 }
