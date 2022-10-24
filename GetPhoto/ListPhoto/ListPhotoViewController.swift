@@ -17,6 +17,9 @@ class ListPhotoViewController: UIViewController {
         return view
     }()
     
+    
+    private var viewModel = ListPhotoViewModel()
+    
     private var dataSource: UICollectionViewDiffableDataSource<Int, ListPhoto>!
     
     private var cellRegistration: UICollectionView.CellRegistration<ListPhotoCollectionViewCell, ListPhoto>!
@@ -28,6 +31,7 @@ class ListPhotoViewController: UIViewController {
         
         configureUI()
         configureDataSource()
+        bindListPhoto()
         
     }
     
@@ -39,6 +43,21 @@ class ListPhotoViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
+    }
+    
+    private func bindListPhoto() {
+        
+        viewModel.requestListPhoto(query: "apple")
+        
+        viewModel.photoList.bind { [weak self] value in
+            guard let self = self else { return }
+            
+            var snapshot = NSDiffableDataSourceSnapshot<Int, ListPhoto>()
+            snapshot.appendSections([0])
+            snapshot.appendItems(value)
+            self.dataSource.apply(snapshot)
+            
+        }
     }
     
     private func configureDataSource() {
