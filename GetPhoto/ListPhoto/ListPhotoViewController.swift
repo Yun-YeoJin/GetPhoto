@@ -17,6 +17,11 @@ class ListPhotoViewController: UIViewController {
         return view
     }()
     
+    let searchBar = UISearchBar().then {
+        $0.placeholder = "리스트 이미지를 검색해보세요."
+        $0.backgroundColor = .systemBackground
+    }
+    
     
     private var viewModel = ListPhotoViewModel()
     
@@ -29,6 +34,8 @@ class ListPhotoViewController: UIViewController {
         
         collectionView.collectionViewLayout = createLayout()
         
+        searchBar.delegate = self
+        
         configureUI()
         configureDataSource()
         bindListPhoto()
@@ -37,10 +44,17 @@ class ListPhotoViewController: UIViewController {
     
     func configureUI() {
         
+        view.addSubview(searchBar)
         view.addSubview(collectionView)
         
+        searchBar.snp.makeConstraints { make in
+            make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(44)
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.equalTo(searchBar.snp.bottom).offset(0)
+            make.bottom.leading.trailing.equalToSuperview()
         }
         
     }
@@ -86,6 +100,16 @@ class ListPhotoViewController: UIViewController {
         
     }
     
+    
+}
+
+extension ListPhotoViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        viewModel.requestListPhoto(query: searchBar.text!)
+        
+    }
     
 }
 
