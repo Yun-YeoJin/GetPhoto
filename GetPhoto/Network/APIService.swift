@@ -12,7 +12,7 @@ class APIService {
     
     private init() { }
     
-    static func requestRandomPhoto(query: String, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
+    static func fetchRandomPhoto(query: String, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
         let url = "\(EndPoint.randomPhotoURL)\(query)"
         let header: HTTPHeaders = ["Authorization": APIKey.unsplashKey]
         
@@ -26,7 +26,7 @@ class APIService {
         }
     }
     
-    static func requestListPhoto(query: String, completion: @escaping ([ListPhoto]?, Int?, Error?) -> Void) {
+    static func fetchListPhoto(query: String, completion: @escaping ([ListPhoto]?, Int?, Error?) -> Void) {
         
         let url = "\(EndPoint.listURL)\(query)"
         let header: HTTPHeaders = ["Authorization": APIKey.unsplashKey]

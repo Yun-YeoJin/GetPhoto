@@ -6,3 +6,20 @@
 //
 
 import Foundation
+
+class ListPhotoViewModel {
+    
+    var photoList: CObservable<[ListPhoto]> = CObservable([])
+    
+    func requestListPhoto(query: String) {
+        
+        APIService.fetchListPhoto(query: query) { photoList, statusCode, error in
+            
+            guard let photoList = photoList else { return }
+            self.photoList.value = photoList
+            
+        }
+        
+    }
+    
+}
