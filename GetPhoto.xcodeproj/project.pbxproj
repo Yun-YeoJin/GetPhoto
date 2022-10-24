@@ -87,6 +87,7 @@
 		AE9D2D6E290583C200043D8B /* GetPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				AE9D2D7D290583C400043D8B /* Info.plist */,
 				AE9D2DA92906C8EE00043D8B /* RandomPhoto */,
 				AE9D2DA82906C8D200043D8B /* ListPhoto */,
 				AE9D2DB22906C98700043D8B /* Global */,
@@ -142,7 +143,6 @@
 			children = (
 				AE9D2D6F290583C200043D8B /* AppDelegate.swift */,
 				AE9D2D71290583C200043D8B /* SceneDelegate.swift */,
-				AE9D2D7D290583C400043D8B /* Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";

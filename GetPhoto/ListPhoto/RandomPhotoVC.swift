@@ -34,6 +34,8 @@ class RandomPhotoVC: UIViewController {
         view.addSubview(collectionView)
         view.addSubview(searchBar)
         
+        collectionView.collectionViewLayout = createLayout()
+        
         configureDataSource()
         
         setConstraints()
