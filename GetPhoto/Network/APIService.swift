@@ -6,11 +6,11 @@
 //
 
 import Foundation
-
-import Foundation
 import Alamofire
 
 class APIService {
+    
+    private init() { }
     
     static func randomPhoto(query: String, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
         let url = "\(EndPoint.randomPhotoURL)\(query)"
@@ -26,7 +26,5 @@ class APIService {
         }
     }
     
-    private init() {
-        
-    }
+    
 }

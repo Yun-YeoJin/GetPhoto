@@ -12,7 +12,7 @@ struct RandomPhoto: Codable, Hashable {
     
     let id: String
     let altDescription: String
-    let urls: Urls
+    let urls: RandomPhotoUrls
     let views, downloads: Int
 
     enum CodingKeys: String, CodingKey {
@@ -24,7 +24,7 @@ struct RandomPhoto: Codable, Hashable {
 }
 
 // MARK: - Urls
-struct Urls: Codable, Hashable {
+struct RandomPhotoUrls: Codable, Hashable {
     
     let raw, full, regular, small: String
     let thumb, smallS3: String
