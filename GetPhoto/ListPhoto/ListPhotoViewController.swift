@@ -17,7 +17,9 @@ class ListPhotoViewController: UIViewController {
         return view
     }()
     
+    private var dataSource: UICollectionViewDiffableDataSource<Int, ListPhoto>!
     
+    private var cellRegistration: UICollectionView.CellRegistration<ListPhotoCollectionViewCell, ListPhoto>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class ListPhotoViewController: UIViewController {
         collectionView.collectionViewLayout = createLayout()
         
         configureUI()
+        configureDataSource()
         
     }
     
@@ -35,6 +38,34 @@ class ListPhotoViewController: UIViewController {
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+    }
+    
+    private func configureDataSource() {
+        
+        cellRegistration = UICollectionView.CellRegistration<ListPhotoCollectionViewCell, ListPhoto>(handler: { cell, indexPath, itemIdentifier in
+            
+            
+            var content = UIListContentConfiguration.valueCell()
+            
+            content.text = "\(itemIdentifier.likes)"
+            
+            // String -> URL -> Data -> Image
+            DispatchQueue.global().async {
+                let url = URL(string: itemIdentifier.urls.thumb)! //String -> URL
+                let data = try? Data(contentsOf: url) //URL -> Data
+                
+                DispatchQueue.main.async {
+                    content.image = UIImage(data: data!) //Data를 기반으로 Image 표현
+                    cell.contentConfiguration = content //main에서 담아줘야한다!
+                }
+            }
+        })
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegistration, for: indexPath, item: itemIdentifier)
+            return cell
+        })
         
     }
     
@@ -49,7 +80,7 @@ extension ListPhotoViewController {
         layout.configuration = configuration
         return layout
     }
-
+    
     private func compositionLayout() -> UICollectionViewCompositionalLayout {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.5), heightDimension: .estimated(50))
