@@ -10,6 +10,10 @@ import Foundation
 enum EndPoint {
     
     static let baseURL = "https://api.unsplash.com"
+    
+    static let searchURL = "https://api.unsplash.com/search/photos?query="
+    static let listURL = "https://api.unsplash.com/photos?query="
     static let randomPhotoURL = "https://api.unsplash.com/photos/random?query="
+    
 
 }
