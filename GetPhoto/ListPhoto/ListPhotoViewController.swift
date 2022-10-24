@@ -65,9 +65,7 @@ class ListPhotoViewController: UIViewController {
         cellRegistration = UICollectionView.CellRegistration<ListPhotoCollectionViewCell, ListPhoto>(handler: { cell, indexPath, itemIdentifier in
             
             
-            var content = UIListContentConfiguration.valueCell()
-            
-            content.text = "\(itemIdentifier.likes)"
+            cell.likesLabel.text = "좋아요 수 : \(itemIdentifier.likes)"
             
             // String -> URL -> Data -> Image
             DispatchQueue.global().async {
@@ -75,8 +73,8 @@ class ListPhotoViewController: UIViewController {
                 let data = try? Data(contentsOf: url) //URL -> Data
                 
                 DispatchQueue.main.async {
-                    content.image = UIImage(data: data!) //Data를 기반으로 Image 표현
-                    cell.contentConfiguration = content //main에서 담아줘야한다!
+                    cell.photoImageView.image = UIImage(data: data!) //Data를 기반으로 Image 표현
+                    cell.contentConfiguration = cell.photoImageView.image as? any UIContentConfiguration //main에서 담아줘야한다!
                 }
             }
         })
