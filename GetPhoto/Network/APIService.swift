@@ -12,7 +12,7 @@ class APIService {
     
     private init() { }
     
-    static func randomPhoto(query: String, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
+    static func requestRandomPhoto(query: String, completion: @escaping (RandomPhoto?, Int?, Error?) -> Void) {
         let url = "\(EndPoint.randomPhotoURL)\(query)"
         let header: HTTPHeaders = ["Authorization": APIKey.unsplashKey]
         
@@ -24,6 +24,22 @@ class APIService {
             case .failure(let error): completion(nil, statusCode, error)
             }
         }
+    }
+    
+    static func requestListPhoto(query: String, completion: @escaping ([ListPhoto]?, Int?, Error?) -> Void) {
+        
+        let url = "\(EndPoint.listURL)\(query)"
+        let header: HTTPHeaders = ["Authorization": APIKey.unsplashKey]
+        
+        AF.request(url, method: .get, headers: header).responseDecodable(of: [ListPhoto].self) { response in
+            let statusCode = response.response?.statusCode
+            
+            switch response.result {
+            case .success(let value): completion(value, statusCode, nil)
+            case .failure(let error): completion(nil, statusCode, error)
+            }
+        }
+
     }
     
     
