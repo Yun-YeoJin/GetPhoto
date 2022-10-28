@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE02E457290BC1E600CCAE15 /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02E456290BC1E600CCAE15 /* SearchPhoto.swift */; };
+		AE02E459290BC2C200CCAE15 /* SearchPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02E458290BC2C200CCAE15 /* SearchPhotoViewModel.swift */; };
+		AE02E45B290BC2F700CCAE15 /* SearchPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02E45A290BC2F700CCAE15 /* SearchPhotoViewController.swift */; };
 		AE9D2D70290583C200043D8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D6F290583C200043D8B /* AppDelegate.swift */; };
 		AE9D2D72290583C200043D8B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2D71290583C200043D8B /* SceneDelegate.swift */; };
 		AE9D2D77290583C200043D8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AE9D2D75290583C200043D8B /* Main.storyboard */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE02E456290BC1E600CCAE15 /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
+		AE02E458290BC2C200CCAE15 /* SearchPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoViewModel.swift; sourceTree = "<group>"; };
+		AE02E45A290BC2F700CCAE15 /* SearchPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoViewController.swift; sourceTree = "<group>"; };
 		AE9D2D6C290583C200043D8B /* GetPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE9D2D6F290583C200043D8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AE9D2D71290583C200043D8B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE02E455290BC1D700CCAE15 /* SearchPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				AE02E456290BC1E600CCAE15 /* SearchPhoto.swift */,
+				AE02E458290BC2C200CCAE15 /* SearchPhotoViewModel.swift */,
+				AE02E45A290BC2F700CCAE15 /* SearchPhotoViewController.swift */,
+			);
+			path = SearchPhoto;
+			sourceTree = "<group>";
+		};
 		AE9D2D63290583C200043D8B = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +103,7 @@
 		AE9D2D6E290583C200043D8B /* GetPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				AE02E455290BC1D700CCAE15 /* SearchPhoto */,
 				AE9D2D7D290583C400043D8B /* Info.plist */,
 				AE9D2DA92906C8EE00043D8B /* RandomPhoto */,
 				AE9D2DA82906C8D200043D8B /* ListPhoto */,
@@ -247,9 +264,12 @@
 				AE9D2D70290583C200043D8B /* AppDelegate.swift in Sources */,
 				AE9D2DAD2906C93700043D8B /* ListPhotoViewController.swift in Sources */,
 				AE9D2D72290583C200043D8B /* SceneDelegate.swift in Sources */,
+				AE02E457290BC1E600CCAE15 /* SearchPhoto.swift in Sources */,
 				AE9D2D882905901600043D8B /* APIKey.swift in Sources */,
 				AE9D2D9C290599EB00043D8B /* RandomPhotoViewModel.swift in Sources */,
+				AE02E45B290BC2F700CCAE15 /* SearchPhotoViewController.swift in Sources */,
 				AE9D2DB12906C96600043D8B /* ListPhotoViewModel.swift in Sources */,
+				AE02E459290BC2C200CCAE15 /* SearchPhotoViewModel.swift in Sources */,
 				AE9D2D9F29059A2000043D8B /* RandomPhotoVC.swift in Sources */,
 				AE9D2D94290591AA00043D8B /* RandomPhoto.swift in Sources */,
 				AE9D2DAB2906C92500043D8B /* ListPhoto.swift in Sources */,

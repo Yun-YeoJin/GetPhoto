@@ -41,7 +41,7 @@ class ListPhotoCollectionViewCell: UICollectionViewCell {
         
         photoImageView.snp.makeConstraints { make in
             make.top.leading.bottom.equalToSuperview().inset(8)
-            make.width.height.equalTo(50)
+            make.width.height.equalTo(150)
         }
         
         likesLabel.snp.makeConstraints { make in
