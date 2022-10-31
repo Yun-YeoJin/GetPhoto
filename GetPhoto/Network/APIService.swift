@@ -8,6 +8,37 @@
 import Foundation
 import Alamofire
 
+enum Router: URLRequestConvertible {
+    case get(query: String)
+    
+    var baseURL: URL {
+        return URL(string: EndPoint.searchURL + path)!
+    }
+    
+    var header: HTTPHeaders {
+        return ["Authorization": APIKey.unsplashKey]
+    }
+    
+    var method: HTTPMethod {
+        return .get
+    }
+    
+    var path: String {
+        switch self {
+        case .get(let query):
+            return "\(query)"
+        }
+    }
+    
+    func asURLRequest() throws -> URLRequest {
+        let url = baseURL
+        var request = URLRequest(url: url)
+        request.method = method
+        request.headers = header
+        return request
+    }
+}
+
 class APIService {
     
     private init() { }
@@ -42,18 +73,23 @@ class APIService {
 
     }
     
-    static func searchPhoto(query: String, completion: @escaping (SearchPhoto?, Int?, Error?) -> Void) {
-        let url = "\(EndPoint.searchURL)\(query)"
-        let header: HTTPHeaders = ["Authorization": APIKey.unsplashKey]
+    static func searchPhoto(query: String, completion: @escaping (Result<SearchPhoto, AFError>) -> Void) {
         
-        AF.request(url, method: .get, headers: header).responseDecodable(of: SearchPhoto.self) { response in
-            let statusCode = response.response?.statusCode
+        
+        AF.request(Router.get(query: query)).responseDecodable(of: SearchPhoto.self) { response in
             
-            switch response.result {
-            case .success(let value): completion(value, statusCode, nil)
-            case .failure(let error): completion(nil, statusCode, error)
-            }
+            completion(response.result)
+            
         }
+        
+//        AF.request(url, method: .get, headers: header).responseDecodable(of: SearchPhoto.self) { response in
+//            let statusCode = response.response?.statusCode
+//
+//            switch response.result {
+//            case .success(let value): completion(value, statusCode, nil)
+//            case .failure(let error): completion(nil, statusCode, error)
+//            }
+//        }
     }
     
     

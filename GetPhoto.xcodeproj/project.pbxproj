@@ -31,6 +31,18 @@
 		AE9D2DAD2906C93700043D8B /* ListPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2DAC2906C93700043D8B /* ListPhotoViewController.swift */; };
 		AE9D2DAF2906C95A00043D8B /* ListPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2DAE2906C95A00043D8B /* ListPhotoCollectionViewCell.swift */; };
 		AE9D2DB12906C96600043D8B /* ListPhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9D2DB02906C96600043D8B /* ListPhotoViewModel.swift */; };
+		AEF1799F291014F6004C7591 /* PhotoFolderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF1799E291014F6004C7591 /* PhotoFolderViewModel.swift */; };
+		AEF179A129101501004C7591 /* PhotoFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179A029101501004C7591 /* PhotoFolderViewController.swift */; };
+		AEF179A329101515004C7591 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179A229101515004C7591 /* PhotoViewController.swift */; };
+		AEF179A529101524004C7591 /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179A429101524004C7591 /* PhotoViewModel.swift */; };
+		AEF179A729101531004C7591 /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179A629101531004C7591 /* PhotoCollectionViewCell.swift */; };
+		AEF179A929101559004C7591 /* SearchPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179A829101559004C7591 /* SearchPhotoCollectionViewCell.swift */; };
+		AEF179B029101602004C7591 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEF179AF29101602004C7591 /* RealmSwift */; };
+		AEF179B229101766004C7591 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179B129101766004C7591 /* DocumentManager.swift */; };
+		AEF179B4291017F3004C7591 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179B3291017F3004C7591 /* Photo.swift */; };
+		AEF179B829101809004C7591 /* PhotoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF179B729101809004C7591 /* PhotoRepository.swift */; };
+		AEF179BB29101DEB004C7591 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AEF179BA29101DEB004C7591 /* RxCocoa */; };
+		AEF179BD29101DEB004C7591 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AEF179BC29101DEB004C7591 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +68,15 @@
 		AE9D2DAC2906C93700043D8B /* ListPhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoViewController.swift; sourceTree = "<group>"; };
 		AE9D2DAE2906C95A00043D8B /* ListPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		AE9D2DB02906C96600043D8B /* ListPhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPhotoViewModel.swift; sourceTree = "<group>"; };
+		AEF1799E291014F6004C7591 /* PhotoFolderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFolderViewModel.swift; sourceTree = "<group>"; };
+		AEF179A029101501004C7591 /* PhotoFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoFolderViewController.swift; sourceTree = "<group>"; };
+		AEF179A229101515004C7591 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		AEF179A429101524004C7591 /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
+		AEF179A629101531004C7591 /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AEF179A829101559004C7591 /* SearchPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
+		AEF179B129101766004C7591 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
+		AEF179B3291017F3004C7591 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		AEF179B729101809004C7591 /* PhotoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +84,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF179BB29101DEB004C7591 /* RxCocoa in Frameworks */,
 				AE9D2D97290599AE00043D8B /* SnapKit in Frameworks */,
 				AE9D2D922905917F00043D8B /* Kingfisher in Frameworks */,
 				AE9D2D8F2905917400043D8B /* Alamofire in Frameworks */,
+				AEF179B029101602004C7591 /* RealmSwift in Frameworks */,
 				AE9D2D9A290599BA00043D8B /* Then in Frameworks */,
+				AEF179BD29101DEB004C7591 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,9 +100,8 @@
 		AE02E455290BC1D700CCAE15 /* SearchPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				AE02E456290BC1E600CCAE15 /* SearchPhoto.swift */,
-				AE02E458290BC2C200CCAE15 /* SearchPhotoViewModel.swift */,
-				AE02E45A290BC2F700CCAE15 /* SearchPhotoViewController.swift */,
+				AEF1799A2910103F004C7591 /* ViewModel */,
+				AEF1799929101037004C7591 /* View */,
 			);
 			path = SearchPhoto;
 			sourceTree = "<group>";
@@ -103,10 +126,9 @@
 		AE9D2D6E290583C200043D8B /* GetPhoto */ = {
 			isa = PBXGroup;
 			children = (
-				AE02E455290BC1D700CCAE15 /* SearchPhoto */,
+				AEF179AA2910157D004C7591 /* Domain */,
+				AEF1799D291014BA004C7591 /* Presentation */,
 				AE9D2D7D290583C400043D8B /* Info.plist */,
-				AE9D2DA92906C8EE00043D8B /* RandomPhoto */,
-				AE9D2DA82906C8D200043D8B /* ListPhoto */,
 				AE9D2DB22906C98700043D8B /* Global */,
 				AE9D2DB32906C99700043D8B /* Resource */,
 				AE9D2DB42906C9AF00043D8B /* Application */,
@@ -167,11 +189,94 @@
 		AE9D2DB52906C9CD00043D8B /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				AE02E456290BC1E600CCAE15 /* SearchPhoto.swift */,
 				AE9D2D872905901600043D8B /* APIKey.swift */,
 				AE9D2D892905903E00043D8B /* EndPoint.swift */,
 				AE9D2D8B2905915700043D8B /* APIService.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AEF1799929101037004C7591 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AE02E45A290BC2F700CCAE15 /* SearchPhotoViewController.swift */,
+				AEF179A829101559004C7591 /* SearchPhotoCollectionViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AEF1799A2910103F004C7591 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				AE02E458290BC2C200CCAE15 /* SearchPhotoViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		AEF1799B29101097004C7591 /* PhotoFolder */ = {
+			isa = PBXGroup;
+			children = (
+				AEF1799E291014F6004C7591 /* PhotoFolderViewModel.swift */,
+				AEF179A029101501004C7591 /* PhotoFolderViewController.swift */,
+			);
+			name = PhotoFolder;
+			sourceTree = "<group>";
+		};
+		AEF1799C291010A3004C7591 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179A229101515004C7591 /* PhotoViewController.swift */,
+				AEF179A429101524004C7591 /* PhotoViewModel.swift */,
+				AEF179A629101531004C7591 /* PhotoCollectionViewCell.swift */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		AEF1799D291014BA004C7591 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AE9D2DA82906C8D200043D8B /* ListPhoto */,
+				AE9D2DA92906C8EE00043D8B /* RandomPhoto */,
+				AE02E455290BC1D700CCAE15 /* SearchPhoto */,
+				AEF1799B29101097004C7591 /* PhotoFolder */,
+				AEF1799C291010A3004C7591 /* Photo */,
+			);
+			name = Presentation;
+			sourceTree = "<group>";
+		};
+		AEF179AA2910157D004C7591 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179AC29101590004C7591 /* DataBase */,
+				AEF179AB29101587004C7591 /* Document */,
+			);
+			name = Domain;
+			sourceTree = "<group>";
+		};
+		AEF179AB29101587004C7591 /* Document */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179B129101766004C7591 /* DocumentManager.swift */,
+			);
+			path = Document;
+			sourceTree = "<group>";
+		};
+		AEF179AC29101590004C7591 /* DataBase */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179AD2910159E004C7591 /* Realm */,
+			);
+			name = DataBase;
+			sourceTree = "<group>";
+		};
+		AEF179AD2910159E004C7591 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				AEF179B3291017F3004C7591 /* Photo.swift */,
+				AEF179B729101809004C7591 /* PhotoRepository.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -195,6 +300,9 @@
 				AE9D2D912905917F00043D8B /* Kingfisher */,
 				AE9D2D96290599AE00043D8B /* SnapKit */,
 				AE9D2D99290599BA00043D8B /* Then */,
+				AEF179AF29101602004C7591 /* RealmSwift */,
+				AEF179BA29101DEB004C7591 /* RxCocoa */,
+				AEF179BC29101DEB004C7591 /* RxSwift */,
 			);
 			productName = GetPhoto;
 			productReference = AE9D2D6C290583C200043D8B /* GetPhoto.app */;
@@ -229,6 +337,8 @@
 				AE9D2D902905917F00043D8B /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				AE9D2D95290599AE00043D8B /* XCRemoteSwiftPackageReference "SnapKit" */,
 				AE9D2D98290599BA00043D8B /* XCRemoteSwiftPackageReference "Then" */,
+				AEF179AE29101602004C7591 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				AEF179B929101DEB004C7591 /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = AE9D2D6D290583C200043D8B /* Products */;
 			projectDirPath = "";
@@ -258,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF179B4291017F3004C7591 /* Photo.swift in Sources */,
 				AE9D2D8A2905903E00043D8B /* EndPoint.swift in Sources */,
 				AE9D2D8C2905915700043D8B /* APIService.swift in Sources */,
 				AE9D2D8429058F9200043D8B /* CObservable.swift in Sources */,
@@ -267,12 +378,20 @@
 				AE02E457290BC1E600CCAE15 /* SearchPhoto.swift in Sources */,
 				AE9D2D882905901600043D8B /* APIKey.swift in Sources */,
 				AE9D2D9C290599EB00043D8B /* RandomPhotoViewModel.swift in Sources */,
+				AEF179A529101524004C7591 /* PhotoViewModel.swift in Sources */,
 				AE02E45B290BC2F700CCAE15 /* SearchPhotoViewController.swift in Sources */,
+				AEF179A729101531004C7591 /* PhotoCollectionViewCell.swift in Sources */,
 				AE9D2DB12906C96600043D8B /* ListPhotoViewModel.swift in Sources */,
+				AEF179A929101559004C7591 /* SearchPhotoCollectionViewCell.swift in Sources */,
 				AE02E459290BC2C200CCAE15 /* SearchPhotoViewModel.swift in Sources */,
 				AE9D2D9F29059A2000043D8B /* RandomPhotoVC.swift in Sources */,
+				AEF179A129101501004C7591 /* PhotoFolderViewController.swift in Sources */,
+				AEF1799F291014F6004C7591 /* PhotoFolderViewModel.swift in Sources */,
 				AE9D2D94290591AA00043D8B /* RandomPhoto.swift in Sources */,
+				AEF179B229101766004C7591 /* DocumentManager.swift in Sources */,
+				AEF179B829101809004C7591 /* PhotoRepository.swift in Sources */,
 				AE9D2DAB2906C92500043D8B /* ListPhoto.swift in Sources */,
+				AEF179A329101515004C7591 /* PhotoViewController.swift in Sources */,
 				AE9D2DAF2906C95A00043D8B /* ListPhotoCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -533,6 +652,22 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		AEF179AE29101602004C7591 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 10.32.0;
+			};
+		};
+		AEF179B929101DEB004C7591 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -555,6 +690,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = AE9D2D98290599BA00043D8B /* XCRemoteSwiftPackageReference "Then" */;
 			productName = Then;
+		};
+		AEF179AF29101602004C7591 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF179AE29101602004C7591 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		AEF179BA29101DEB004C7591 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF179B929101DEB004C7591 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		AEF179BC29101DEB004C7591 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF179B929101DEB004C7591 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
