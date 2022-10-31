@@ -9,11 +9,14 @@ import UIKit
 
 import SnapKit
 import Kingfisher
+import RxCocoa
+import RxSwift
 
 class SearchPhotoViewController: UIViewController {
     
-    let collectionView: UICollectionView = {
-        let view = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
+    lazy var collectionView: UICollectionView = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        view.delegate = self
         return view
     }()
     
@@ -24,31 +27,37 @@ class SearchPhotoViewController: UIViewController {
     
     let viewModel = SearchPhotoViewModel()
     
-    private var cellRegisteration: UICollectionView.CellRegistration<UICollectionViewListCell, SearchResult>!
-        
-    private var dataSource: UICollectionViewDiffableDataSource<Int, SearchResult>!
+    private var cellRegisteration: UICollectionView.CellRegistration<SearchPhotoCollectionViewCell, SearchResult>!
+    
+    private var dataSource: UICollectionViewDiffableDataSource<Int, SearchResult>?
+    
+    var disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        collectionView.collectionViewLayout = createLayout()
         
         searchBar.delegate = self
         
-        configureUI()
-        
-        configureDataSource()
+        collectionView.collectionViewLayout = createLayout()
 
-        viewModel.photoList.bind { photo in
-            
-            var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>() //인스턴스 처럼 생성
-            snapshot.appendSections([0])//섹션 추가
-            snapshot.appendItems(photo.results)//아이템 추가
-            self.dataSource.apply(snapshot)
-            
-        }
-   
+        configureUI()
+        configureDataSource()
+        
+        viewModel.photoList
+            .withUnretained(self)
+            .bind(onNext: { vc, photo in
+                guard let dataSource = vc.dataSource else { return }
+                var snapshot = NSDiffableDataSourceSnapshot<Int, SearchResult>() //인스턴스 처럼 생성
+                snapshot.appendSections([0])//섹션 추가
+                snapshot.appendItems(photo.results)//아이템 추가
+                dataSource.apply(snapshot)
+            })
+            .disposed(by: disposeBag)
+        
+        
     }
+
+
     
     func configureUI() {
         
@@ -73,41 +82,48 @@ extension SearchPhotoViewController: UISearchBarDelegate {
         
         viewModel.requestSearchPhoto(query: searchBar.text!)
         
+        
     }
     
 }
 
 extension SearchPhotoViewController {
-
+    
     private func createLayout() -> UICollectionViewLayout {
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        let layout = UICollectionViewCompositionalLayout.list(using: config)
+        let size = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(0.2))
+        let item = NSCollectionLayoutItem(layoutSize: size)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
     
     private func configureDataSource() {
-        cellRegisteration = UICollectionView.CellRegistration<UICollectionViewListCell, SearchResult>(handler: { cell, indexPath, itemIdentifier in
+        cellRegisteration = UICollectionView.CellRegistration<SearchPhotoCollectionViewCell, SearchResult>(handler: { cell, indexPath, itemIdentifier in
             
-            var content = UIListContentConfiguration.valueCell()
+            let url = URL(string: itemIdentifier.urls.thumb)
+            cell.photoImageView.kf.setImage(with: url!)
+            cell.photoDescriptionLabel.text = itemIdentifier.resultDescription
+            cell.photoLikeLabel.text = "\(itemIdentifier.likes)"
             
-            content.text = "좋아요 수 : \(itemIdentifier.likes)"
-            
-            DispatchQueue.global().async {
-                let url = URL(string: itemIdentifier.urls.thumb)!
-                let data = try? Data(contentsOf: url)
-                
-                DispatchQueue.main.async {
-                    content.image = UIImage(data: data!)
-                    cell.contentConfiguration = content
-                }
-            }
-                        
         })
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             let cell = collectionView.dequeueConfiguredReusableCell(using: self.cellRegisteration, for: indexPath, item: itemIdentifier)
             return cell
         })
-    
+        
     }
+}
+
+extension SearchPhotoViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
 }
