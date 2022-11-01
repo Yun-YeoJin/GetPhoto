@@ -36,6 +36,10 @@ class SearchPhotoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Unsplash Photo 검색기"
+        navigationController?.navigationBar.tintColor = .systemMint
+        navigationController?.navigationBar.backgroundColor = .systemBackground
+       
         searchBar.delegate = self
         
         collectionView.collectionViewLayout = createLayout()
