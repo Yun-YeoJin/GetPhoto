@@ -68,6 +68,7 @@ class SearchPhotoViewController: UIViewController {
         view.addSubview(searchBar)
         view.addSubview(collectionView)
         
+        
         searchBar.snp.makeConstraints { make in
             make.top.leading.trailing.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(44)
@@ -127,6 +128,11 @@ extension SearchPhotoViewController {
 extension SearchPhotoViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        guard let item = dataSource?.itemIdentifier(for: indexPath) else { return }
+        guard let cell = collectionView.cellForItem(at: indexPath) as? SearchPhotoCollectionViewCell else { return }
+        viewModel.addFolder(item: item, text: self.searchBar.text!)
+        DocumentManager.shared.saveImageToDocument(fileName: "\(item.id)", image: cell.photoImageView.image!)
         
     }
     
